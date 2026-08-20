@@ -1,0 +1,859 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admissions | Nexora International School</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            color: #142b44;
+            background: #f7faff;
+            line-height: 1.6;
+        }
+
+        /* HEADER */
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 7%;
+            background: white;
+            box-shadow: 0 3px 20px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo h2 {
+            font-size: 25px;
+            letter-spacing: 2px;
+        }
+
+        .logo span {
+            font-size: 12px;
+            color: #607080;
+            letter-spacing: 1px;
+        }
+
+        nav {
+            display: flex;
+            gap: 28px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #142b44;
+            font-weight: 600;
+        }
+
+        nav a:hover {
+            color: #1769aa;
+        }
+
+        /* HERO */
+
+        .admissions-hero {
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 100px 7%;
+
+            background:
+                linear-gradient(
+                    rgba(8,35,66,0.78),
+                    rgba(23,105,170,0.76)
+                ),
+              url("images/admissions.png");
+
+            background-size: cover;
+            background-position: center;
+
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .hero-label {
+            color: #bfe4ff;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 4px;
+            margin-bottom: 20px;
+        }
+
+        .admissions-hero h1 {
+            font-size: 65px;
+            line-height: 1.08;
+            margin-bottom: 25px;
+        }
+
+        .admissions-hero p {
+            font-size: 20px;
+            color: #e5f3ff;
+            max-width: 750px;
+            margin: auto;
+        }
+
+        .hero-button {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 15px 32px;
+            background: white;
+            color: #1769aa;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s ease;
+        }
+
+        .hero-button:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+
+        /* INTRO */
+
+        .intro {
+            max-width: 950px;
+            margin: auto;
+            padding: 100px 7%;
+            text-align: center;
+        }
+
+        .label {
+            color: #1769aa;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            margin-bottom: 15px;
+        }
+
+        .intro h2 {
+            font-size: 45px;
+            margin-bottom: 20px;
+        }
+
+        .intro p {
+            color: #667085;
+            font-size: 17px;
+        }
+
+        /* WHY NIS */
+
+        .why {
+            padding: 100px 7%;
+            background: white;
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 55px;
+        }
+
+        .section-heading h2 {
+            font-size: 44px;
+        }
+
+        .benefit-grid {
+            max-width: 1150px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 25px;
+        }
+
+        .benefit {
+            padding: 35px 28px;
+            border-radius: 18px;
+            background: #f7faff;
+            border: 1px solid #dfeaf4;
+            transition: 0.4s ease;
+        }
+
+        .benefit:hover {
+            transform: translateY(-8px);
+            background: white;
+            box-shadow: 0 20px 40px rgba(20,70,110,0.12);
+        }
+
+        .benefit h3 {
+            color: #1769aa;
+            font-size: 23px;
+            margin-bottom: 12px;
+        }
+
+        .benefit p {
+            color: #667085;
+        }
+
+        /* PROCESS */
+
+        .process {
+            padding: 105px 7%;
+            background: #f2f7fc;
+        }
+
+        .process-grid {
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            gap: 18px;
+        }
+
+        .step {
+            background: white;
+            padding: 30px 22px;
+            border-radius: 16px;
+            border: 1px solid #dfeaf4;
+            position: relative;
+        }
+
+        .step-number {
+            width: 42px;
+            height: 42px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: #1769aa;
+            color: white;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .step h3 {
+            margin-bottom: 10px;
+        }
+
+        .step p {
+            color: #667085;
+            font-size: 14px;
+        }
+
+        /* REQUIREMENTS */
+
+        .requirements {
+            padding: 105px 7%;
+            background: white;
+        }
+
+        .requirements-grid {
+            max-width: 1050px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .requirement-card {
+            padding: 38px;
+            border-radius: 18px;
+            background: linear-gradient(135deg,#eef7ff,#ffffff);
+            border: 1px solid #dcebf6;
+        }
+
+        .requirement-card h3 {
+            color: #1769aa;
+            font-size: 25px;
+            margin-bottom: 18px;
+        }
+
+        .requirement-card p {
+            color: #667085;
+            margin-bottom: 10px;
+        }
+
+        .requirement-card p::before {
+            content: "✓";
+            color: #1769aa;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        /* APPLICATION */
+
+        .application {
+            padding: 110px 7%;
+            background: linear-gradient(135deg,#092c4d,#1769aa);
+            color: white;
+            text-align: center;
+        }
+
+        .application h2 {
+            font-size: 45px;
+            margin-bottom: 18px;
+        }
+
+        .application > p {
+            color: #dceeff;
+            max-width: 700px;
+            margin: auto auto 35px;
+            font-size: 17px;
+        }
+
+        .apply-button {
+            display: inline-block;
+            padding: 16px 38px;
+            background: white;
+            color: #1769aa;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: 0.3s ease;
+        }
+
+        .apply-button:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+
+        /* CTA */
+
+        .cta {
+            padding: 90px 7%;
+            text-align: center;
+            background: #f5f9fd;
+        }
+
+        .cta h2 {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .cta p {
+            color: #667085;
+            margin-bottom: 25px;
+        }
+
+        .contact-button {
+            display: inline-block;
+            padding: 14px 30px;
+            background: #1769aa;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        /* FOOTER */
+
+        footer {
+            text-align: center;
+            padding: 45px 7%;
+            background: #0d1c2d;
+            color: white;
+        }
+
+        footer p {
+            color: #c9d5e1;
+            margin-top: 8px;
+        }
+
+        /* RESPONSIVE */
+
+        @media(max-width:900px) {
+
+            .admissions-hero h1 {
+                font-size: 50px;
+            }
+
+            .benefit-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .process-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .requirements-grid {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+        @media(max-width:600px) {
+
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav {
+                gap: 14px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .admissions-hero {
+                min-height: 520px;
+            }
+
+            .admissions-hero h1 {
+                font-size: 40px;
+            }
+
+            .intro h2,
+            .section-heading h2,
+            .application h2,
+            .cta h2 {
+                font-size: 34px;
+            }
+
+            .benefit-grid,
+            .process-grid {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- HEADER -->
+
+    <header>
+
+        <div class="logo">
+
+            <h2>NEXORA</h2>
+
+            <span>
+                International School
+            </span>
+
+        </div>
+
+
+        <nav>
+
+            <a href="index.html">Home</a>
+
+            <a href="about.html">About</a>
+
+            <a href="academics.html">Academics</a>
+
+            <a href="admissions.html">Admissions</a>
+
+            <a href="ai-learning.html">AI Learning</a>
+            <a href="contact.html">Contact</a>
+
+        </nav>
+
+    </header>
+
+
+    <!-- HERO -->
+
+    <section class="admissions-hero">
+
+        <div class="hero-content">
+
+            <p class="hero-label">
+                NEXORA ADMISSIONS
+            </p>
+
+            <h1>
+                Begin Your Journey
+            </h1>
+
+            <p>
+                Join a forward-thinking learning community
+                designed to help every student discover their potential.
+            </p>
+
+            <a href="#apply" class="hero-button">
+                Start Your Application
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- INTRO -->
+
+    <section class="intro">
+
+        <p class="label">
+            WELCOME TO NIS
+        </p>
+
+        <h2>
+            Your Future Starts Here
+        </h2>
+
+        <p>
+            Choosing a school is an important decision.
+            At Nexora International School, we provide an environment
+            where students can learn, grow, build confidence and prepare
+            for a successful future.
+        </p>
+
+    </section>
+
+
+    <!-- WHY NEXORA -->
+
+    <section class="why">
+
+        <div class="section-heading">
+
+            <p class="label">
+                WHY CHOOSE NIS
+            </p>
+
+            <h2>
+                A School Built Around Students
+            </h2>
+
+        </div>
+
+
+        <div class="benefit-grid">
+
+            <div class="benefit">
+
+                <h3>
+                    Academic Excellence
+                </h3>
+
+                <p>
+                    Strong academic foundations combined with
+                    modern teaching methods.
+                </p>
+
+            </div>
+
+
+            <div class="benefit">
+
+                <h3>
+                    Future-Ready Skills
+                </h3>
+
+                <p>
+                    Students develop digital skills, communication,
+                    creativity and critical thinking.
+                </p>
+
+            </div>
+
+
+            <div class="benefit">
+
+                <h3>
+                    Supportive Environment
+                </h3>
+
+                <p>
+                    A safe and encouraging environment where
+                    students can confidently grow.
+                </p>
+
+            </div>
+
+
+            <div class="benefit">
+
+                <h3>
+                    Technology
+                </h3>
+
+                <p>
+                    Technology is integrated into learning
+                    to prepare students for the future.
+                </p>
+
+            </div>
+
+
+            <div class="benefit">
+
+                <h3>
+                    Leadership
+                </h3>
+
+                <p>
+                    Students are encouraged to take responsibility
+                    and develop leadership qualities.
+                </p>
+
+            </div>
+
+
+            <div class="benefit">
+
+                <h3>
+                    Student Development
+                </h3>
+
+                <p>
+                    We focus on academic, personal, social
+                    and creative development.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ADMISSION PROCESS -->
+
+    <section class="process">
+
+        <div class="section-heading">
+
+            <p class="label">
+                HOW IT WORKS
+            </p>
+
+            <h2>
+                Admission Process
+            </h2>
+
+        </div>
+
+
+        <div class="process-grid">
+
+            <div class="step">
+
+                <div class="step-number">
+                    1
+                </div>
+
+                <h3>
+                    Explore
+                </h3>
+
+                <p>
+                    Learn about our programs,
+                    learning environment and opportunities.
+                </p>
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    2
+                </div>
+
+                <h3>
+                    Apply
+                </h3>
+
+                <p>
+                    Complete the admission application
+                    with the required information.
+                </p>
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    3
+                </div>
+
+                <h3>
+                    Assessment
+                </h3>
+
+                <p>
+                    Students may participate in an
+                    appropriate academic assessment.
+                </p>
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    4
+                </div>
+
+                <h3>
+                    Enrollment
+                </h3>
+
+                <p>
+                    Complete enrollment and begin
+                    your Nexora journey.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- REQUIREMENTS -->
+
+    <section class="requirements">
+
+        <div class="section-heading">
+
+            <p class="label">
+                GET PREPARED
+            </p>
+
+            <h2>
+                Admission Information
+            </h2>
+
+        </div>
+
+
+        <div class="requirements-grid">
+
+            <div class="requirement-card">
+
+                <h3>
+                    Required Information
+                </h3>
+
+                <p>
+                    Student's basic information
+                </p>
+
+                <p>
+                    Parent or guardian information
+                </p>
+
+                <p>
+                    Previous school information
+                </p>
+
+                <p>
+                    Academic records where applicable
+                </p>
+
+            </div>
+
+
+            <div class="requirement-card">
+
+                <h3>
+                    Before Applying
+                </h3>
+
+                <p>
+                    Review the appropriate academic program
+                </p>
+
+                <p>
+                    Prepare the required information
+                </p>
+
+                <p>
+                    Contact the school for questions
+                </p>
+
+                <p>
+                    Complete the application carefully
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- APPLICATION -->
+
+    <section class="application" id="apply">
+
+        <p class="hero-label">
+            TAKE THE NEXT STEP
+        </p>
+
+        <h2>
+            Ready to Apply?
+        </h2>
+
+        <p>
+            Start your journey with Nexora International School
+            and discover a future filled with opportunity.
+        </p>
+
+        <a href="#" class="apply-button">
+            Apply Now
+        </a>
+
+    </section>
+
+
+    <!-- CONTACT CTA -->
+
+    <section class="cta">
+
+        <h2>
+            Have Questions?
+        </h2>
+
+        <p>
+            Our team is here to help you understand the admission process.
+        </p>
+
+        <a href="contact.html" class="contact-button">
+            Contact NIS
+        </a>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <h3>
+            NEXORA INTERNATIONAL SCHOOL
+        </h3>
+
+        <p>
+            Inspiring Minds. Shaping Futures.
+        </p>
+
+        <p>
+            © 2026 Nexora International School. All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>
+```

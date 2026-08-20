@@ -1,0 +1,1010 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Primary Mathematics Test | Nexora International School</title>
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f7fb;
+    color: #172033;
+}
+
+/* HEADER */
+
+header {
+    background: #0d1b35;
+    color: white;
+    padding: 20px 7%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand h2 {
+    font-size: 22px;
+}
+
+.brand span {
+    font-size: 12px;
+    color: #b9c5d8;
+}
+
+.back-link {
+    color: white;
+    text-decoration: none;
+}
+
+/* CONTAINER */
+
+.container {
+    max-width: 850px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+/* HEADER */
+
+.test-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.label {
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #68758a;
+}
+
+.test-header h1 {
+    font-size: 40px;
+    margin: 12px 0;
+}
+
+.test-header p {
+    color: #68758a;
+}
+
+/* PROGRESS */
+
+.progress {
+    width: 100%;
+    height: 8px;
+    background: #e2e6ed;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 25px;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 10%;
+    background: #0d1b35;
+    transition: width 0.3s;
+}
+
+/* CARD */
+
+.card {
+    background: white;
+    padding: 35px;
+    border-radius: 20px;
+
+    box-shadow:
+        0 15px 40px rgba(20, 35, 60, 0.08);
+}
+
+.question-number {
+    font-size: 14px;
+    font-weight: bold;
+    color: #7a8799;
+}
+
+.question {
+    font-size: 25px;
+    font-weight: bold;
+    margin: 18px 0 25px;
+}
+
+/* OPTIONS */
+
+.option {
+    display: block;
+
+    padding: 15px;
+
+    margin: 12px 0;
+
+    border: 1px solid #dfe4ec;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.option:hover {
+    background: #f5f7fb;
+}
+
+.option input {
+    margin-right: 10px;
+}
+
+/* BUTTONS */
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+
+    margin-top: 30px;
+}
+
+button {
+    border: none;
+
+    padding: 13px 24px;
+
+    border-radius: 9px;
+
+    cursor: pointer;
+
+    font-size: 15px;
+}
+
+.previous {
+    background: #e7ebf1;
+}
+
+.next {
+    background: #0d1b35;
+    color: white;
+}
+
+/* RESULT */
+
+.result {
+    display: none;
+
+    text-align: center;
+
+    background: white;
+
+    padding: 45px 30px;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 15px 40px rgba(20, 35, 60, 0.08);
+}
+
+.result-icon {
+    font-size: 55px;
+}
+
+.result h2 {
+    font-size: 32px;
+
+    margin: 15px 0;
+}
+
+.score {
+    font-size: 46px;
+
+    font-weight: bold;
+
+    margin: 20px 0;
+}
+
+.result p {
+    margin: 10px;
+
+    color: #68758a;
+}
+
+.status {
+    font-size: 24px;
+
+    font-weight: bold;
+
+    margin-top: 20px;
+}
+
+.back-button {
+    display: inline-block;
+
+    margin-top: 25px;
+
+    padding: 13px 24px;
+
+    background: #0d1b35;
+
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 9px;
+}
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    header {
+        flex-direction: column;
+
+        gap: 12px;
+    }
+
+    .test-header h1 {
+        font-size: 32px;
+    }
+
+    .question {
+        font-size: 21px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- HEADER -->
+
+<header>
+
+    <div class="brand">
+
+        <h2>NEXORA</h2>
+
+        <span>
+            International School
+        </span>
+
+    </div>
+
+
+    <a
+        href="primary-tests.html"
+        class="back-link">
+
+        ← Back to Subjects
+
+    </a>
+
+</header>
+
+
+
+<div class="container">
+
+
+<!-- TEST SECTION -->
+
+<section id="testSection">
+
+
+    <div class="test-header">
+
+        <div class="label">
+
+            PRIMARY EDUCATION
+            • MATHEMATICS
+
+        </div>
+
+
+        <h1>
+
+            Mathematics Test
+
+        </h1>
+
+
+        <p>
+
+            Answer all 10 questions carefully.
+
+        </p>
+
+    </div>
+
+
+
+    <!-- PROGRESS -->
+
+    <div class="progress">
+
+        <div
+            class="progress-bar"
+            id="progressBar">
+        </div>
+
+    </div>
+
+
+
+    <!-- QUESTION CARD -->
+
+    <div class="card">
+
+
+        <div
+            class="question-number"
+            id="questionNumber">
+
+        </div>
+
+
+
+        <div
+            class="question"
+            id="question">
+
+        </div>
+
+
+
+        <div id="options">
+
+        </div>
+
+
+
+        <div class="buttons">
+
+
+            <button
+                class="previous"
+                onclick="previousQuestion()">
+
+                Previous
+
+            </button>
+
+
+
+            <button
+                class="next"
+                id="nextButton"
+                onclick="nextQuestion()">
+
+                Next
+
+            </button>
+
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- RESULT SECTION -->
+
+<section
+    class="result"
+    id="result">
+
+
+    <div
+        class="result-icon"
+        id="resultIcon">
+
+        🎉
+
+    </div>
+
+
+    <h2>
+
+        Test Completed!
+
+    </h2>
+
+
+    <p>
+
+        Primary Mathematics
+
+    </p>
+
+
+    <div
+        class="score"
+        id="score">
+
+    </div>
+
+
+    <p id="percentage">
+
+    </p>
+
+
+    <p id="correct">
+
+    </p>
+
+
+    <p id="wrong">
+
+    </p>
+
+
+    <div
+        class="status"
+        id="status">
+
+    </div>
+
+
+    <a
+        href="primary-tests.html"
+        class="back-button">
+
+        ← Back to Subjects
+
+    </a>
+
+
+</section>
+
+
+</div>
+
+
+
+<script>
+
+
+/* =========================
+   QUESTIONS
+========================= */
+
+const questions = [
+
+    {
+        question: "What is 5 + 3?",
+
+        options: [
+            "6",
+            "7",
+            "8",
+            "9"
+        ],
+
+        answer: 2
+    },
+
+
+    {
+        question: "What is 10 - 4?",
+
+        options: [
+            "5",
+            "6",
+            "7",
+            "8"
+        ],
+
+        answer: 1
+    },
+
+
+    {
+        question: "What is 2 × 5?",
+
+        options: [
+            "7",
+            "8",
+            "10",
+            "12"
+        ],
+
+        answer: 2
+    },
+
+
+    {
+        question: "What is 20 ÷ 4?",
+
+        options: [
+            "4",
+            "5",
+            "6",
+            "8"
+        ],
+
+        answer: 1
+    },
+
+
+    {
+        question: "Which number is the largest?",
+
+        options: [
+            "12",
+            "18",
+            "15",
+            "10"
+        ],
+
+        answer: 1
+    },
+
+
+    {
+        question: "How many sides does a triangle have?",
+
+        options: [
+            "2",
+            "3",
+            "4",
+            "5"
+        ],
+
+        answer: 1
+    },
+
+
+    {
+        question: "What is 7 + 6?",
+
+        options: [
+            "11",
+            "12",
+            "13",
+            "14"
+        ],
+
+        answer: 2
+    },
+
+
+    {
+        question: "What is 15 - 7?",
+
+        options: [
+            "6",
+            "7",
+            "8",
+            "9"
+        ],
+
+        answer: 2
+    },
+
+
+    {
+        question: "Which number comes after 29?",
+
+        options: [
+            "28",
+            "30",
+            "31",
+            "32"
+        ],
+
+        answer: 1
+    },
+
+
+    {
+        question: "What is 4 × 3?",
+
+        options: [
+            "7",
+            "10",
+            "12",
+            "14"
+        ],
+
+        answer: 2
+    }
+
+];
+
+
+
+/* =========================
+   VARIABLES
+========================= */
+
+let currentQuestion = 0;
+
+let answers =
+    new Array(questions.length)
+        .fill(null);
+
+
+
+/* =========================
+   SHOW QUESTION
+========================= */
+
+function showQuestion() {
+
+
+    const q =
+        questions[currentQuestion];
+
+
+
+    document.getElementById(
+        "questionNumber"
+    ).textContent =
+
+        "Question " +
+        (currentQuestion + 1) +
+        " of " +
+        questions.length;
+
+
+
+    document.getElementById(
+        "question"
+    ).textContent =
+
+        q.question;
+
+
+
+    const optionsContainer =
+        document.getElementById(
+            "options"
+        );
+
+
+
+    optionsContainer.innerHTML = "";
+
+
+
+    q.options.forEach(
+        (option, index) => {
+
+
+            const label =
+                document.createElement(
+                    "label"
+                );
+
+
+            label.className =
+                "option";
+
+
+
+            label.innerHTML = `
+
+                <input
+                    type="radio"
+                    name="answer"
+                    value="${index}"
+                    ${
+                        answers[currentQuestion]
+                        === index
+                        ? "checked"
+                        : ""
+                    }
+                >
+
+                ${option}
+
+            `;
+
+
+
+            label
+                .querySelector("input")
+                .addEventListener(
+                    "change",
+                    function() {
+
+                        answers[
+                            currentQuestion
+                        ] =
+                            Number(
+                                this.value
+                            );
+
+                    }
+                );
+
+
+
+            optionsContainer.appendChild(
+                label
+            );
+
+        }
+    );
+
+
+
+    /* PROGRESS */
+
+    document.getElementById(
+        "progressBar"
+    ).style.width =
+
+        (
+            (
+                currentQuestion + 1
+            )
+            /
+            questions.length
+            *
+            100
+        )
+        + "%";
+
+
+
+    /* BUTTON TEXT */
+
+    document.getElementById(
+        "nextButton"
+    ).textContent =
+
+        currentQuestion ===
+        questions.length - 1
+
+        ? "Submit Test"
+
+        : "Next";
+
+}
+
+
+
+/* =========================
+   NEXT QUESTION
+========================= */
+
+function nextQuestion() {
+
+
+    if (
+        currentQuestion ===
+        questions.length - 1
+    ) {
+
+
+        finishTest();
+
+        return;
+
+    }
+
+
+
+    currentQuestion++;
+
+
+    showQuestion();
+
+}
+
+
+
+/* =========================
+   PREVIOUS QUESTION
+========================= */
+
+function previousQuestion() {
+
+
+    if (
+        currentQuestion > 0
+    ) {
+
+
+        currentQuestion--;
+
+
+        showQuestion();
+
+    }
+
+}
+
+
+
+/* =========================
+   FINISH TEST
+========================= */
+
+function finishTest() {
+
+
+    let score = 0;
+
+
+
+    questions.forEach(
+        (question, index) => {
+
+
+            if (
+                answers[index]
+                ===
+                question.answer
+            ) {
+
+                score++;
+
+            }
+
+        }
+    );
+
+
+
+    /* PERCENTAGE */
+
+    const percentage =
+        Math.round(
+            (
+                score
+                /
+                questions.length
+            )
+            *
+            100
+        );
+
+
+
+    /* PASS RULE */
+
+    const passed =
+        score >= 8;
+        localStorage.setItem(
+    "primaryMathematicsScore",
+    score
+);
+
+
+
+    /* HIDE TEST */
+
+    document.getElementById(
+        "testSection"
+    ).style.display =
+        "none";
+
+
+
+    /* SHOW RESULT */
+
+    document.getElementById(
+        "result"
+    ).style.display =
+        "block";
+
+
+
+    /* SCORE */
+
+    document.getElementById(
+        "score"
+    ).textContent =
+
+        score
+        +
+        " / "
+        +
+        questions.length;
+
+
+
+    /* PERCENTAGE */
+
+    document.getElementById(
+        "percentage"
+    ).textContent =
+
+        "Percentage: "
+        +
+        percentage
+        +
+        "%";
+
+
+
+    /* CORRECT */
+
+    document.getElementById(
+        "correct"
+    ).textContent =
+
+        "Correct Answers: "
+        +
+        score;
+
+
+
+    /* WRONG */
+
+    document.getElementById(
+        "wrong"
+    ).textContent =
+
+        "Wrong Answers: "
+        +
+        (
+            questions.length
+            -
+            score
+        );
+
+
+
+    /* RESULT */
+
+    document.getElementById(
+        "status"
+    ).textContent =
+
+        passed
+
+        ? "Result: PASS ✅"
+
+        : "Result: FAIL ❌";
+
+
+
+    document.getElementById(
+        "resultIcon"
+    ).textContent =
+
+        passed
+
+        ? ""
+
+        : "";
+
+}
+
+
+
+/* =========================
+   START
+========================= */
+
+showQuestion();
+
+
+</script>
+
+
+</body>
+
+</html>
+```

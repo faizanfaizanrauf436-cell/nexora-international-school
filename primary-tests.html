@@ -1,0 +1,2192 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Primary Assessment | Nexora International School</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f3f6fb;
+            color: #1e293b;
+            line-height: 1.6;
+        }
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+            background: linear-gradient(135deg, #0f172a, #2563eb);
+            color: white;
+            text-align: center;
+            padding: 35px 20px;
+        }
+
+        header h1 {
+            font-size: 34px;
+            margin-bottom: 8px;
+        }
+
+        header p {
+            font-size: 17px;
+            opacity: 0.95;
+        }
+
+        /* =========================
+           MAIN CONTAINER
+        ========================= */
+
+        .container {
+            width: 92%;
+            max-width: 950px;
+            margin: 35px auto;
+        }
+
+        /* =========================
+           INSTRUCTIONS
+        ========================= */
+
+        .instructions {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+        }
+
+        .instructions h2 {
+            color: #2563eb;
+            margin-bottom: 12px;
+        }
+
+        .instructions ul {
+            padding-left: 22px;
+        }
+
+        .instructions li {
+            margin-bottom: 5px;
+        }
+
+        /* =========================
+           SUBJECT CARD
+        ========================= */
+
+        .subject-card {
+            background: white;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 18px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+        }
+
+        .subject-title {
+            color: #2563eb;
+            font-size: 28px;
+            text-align: center;
+            margin-bottom: 28px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #e5e7eb;
+        }
+
+        /* =========================
+           QUESTION
+        ========================= */
+
+        .question {
+            background: #f8fafc;
+            border-left: 5px solid #2563eb;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+        }
+
+        .question h3 {
+            font-size: 17px;
+            margin-bottom: 13px;
+        }
+
+        label {
+            display: block;
+            background: white;
+            border: 1px solid #dbe3ef;
+            border-radius: 8px;
+            padding: 10px 12px;
+            margin: 7px 0;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        label:hover {
+            background: #eff6ff;
+            border-color: #2563eb;
+        }
+
+        input[type="radio"] {
+            margin-right: 9px;
+        }
+
+        /* =========================
+           FINAL SUBMIT
+        ========================= */
+
+        .final-submit-section {
+            background: white;
+            text-align: center;
+            padding: 35px 25px;
+            border-radius: 18px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            margin-bottom: 30px;
+        }
+
+        .final-submit-section h2 {
+            color: #0f172a;
+            margin-bottom: 10px;
+        }
+
+        .final-submit-section p {
+            margin-bottom: 20px;
+            color: #64748b;
+        }
+
+        .submit-button {
+            width: 100%;
+            max-width: 500px;
+            padding: 16px;
+            border: none;
+            border-radius: 10px;
+            background: #2563eb;
+            color: white;
+            font-size: 19px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .submit-button:hover {
+            background: #1d4ed8;
+            transform: translateY(-1px);
+        }
+
+        /* =========================
+           FINAL RESULT
+        ========================= */
+
+        #finalResult {
+            display: none;
+            background: white;
+            padding: 35px 25px;
+            border-radius: 18px;
+            text-align: center;
+            margin-bottom: 50px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.10);
+        }
+
+        #finalResult.pass {
+            border: 3px solid #22c55e;
+            background: #f0fdf4;
+        }
+
+        #finalResult.fail {
+            border: 3px solid #ef4444;
+            background: #fef2f2;
+        }
+
+        .result-title {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        .result-title.pass-text {
+            color: #15803d;
+        }
+
+        .result-title.fail-text {
+            color: #dc2626;
+        }
+
+        .total-score {
+            font-size: 42px;
+            font-weight: bold;
+            margin: 10px 0;
+            color: #0f172a;
+        }
+
+        .percentage {
+            font-size: 22px;
+            margin-bottom: 20px;
+            color: #475569;
+        }
+
+        .result-status {
+            font-size: 30px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .result-message {
+            font-size: 17px;
+            margin-bottom: 25px;
+        }
+
+        /* =========================
+           SCORE TABLE
+        ========================= */
+
+        .score-table {
+            width: 100%;
+            max-width: 600px;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background: white;
+        }
+
+        .score-table th,
+        .score-table td {
+            padding: 12px;
+            border: 1px solid #dbe3ef;
+        }
+
+        .score-table th {
+            background: #eff6ff;
+            color: #1e40af;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: #0f172a;
+            color: white;
+            text-align: center;
+            padding: 22px;
+        }
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 600px) {
+
+            header h1 {
+                font-size: 26px;
+            }
+
+            header p {
+                font-size: 15px;
+            }
+
+            .container {
+                width: 94%;
+            }
+
+            .subject-card {
+                padding: 20px;
+            }
+
+            .subject-title {
+                font-size: 24px;
+            }
+
+            .question h3 {
+                font-size: 16px;
+            }
+
+            .total-score {
+                font-size: 35px;
+            }
+
+            .result-title {
+                font-size: 27px;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+
+    <header>
+
+        <h1>Nexora International School</h1>
+
+        <p>
+            Primary Education Assessment
+        </p>
+
+    </header>
+
+
+    <main class="container">
+
+
+        <!-- =========================
+             INSTRUCTIONS
+        ========================== -->
+
+        <section class="instructions">
+
+            <h2>Test Instructions</h2>
+
+            <ul>
+
+                <li>This assessment contains 5 subjects.</li>
+
+                <li>Each subject contains 10 questions.</li>
+
+                <li>Each question carries 1 mark.</li>
+
+                <li>Total marks: 50.</li>
+
+                <li>Passing marks: 40 out of 50.</li>
+
+                <li>Read every question carefully.</li>
+
+                <li>Select only one answer for each question.</li>
+
+                <li>Unanswered questions will receive 0 marks.</li>
+
+                <li>Click the final submit button only after completing all subjects.</li>
+
+            </ul>
+            /* =========================
+   DOWNLOAD RESULT BUTTON
+========================= */
+
+.download-result-button {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 14px 28px;
+    border: none;
+    border-radius: 10px;
+    background: #16a34a;
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.download-result-button:hover {
+    background: #15803d;
+    transform: translateY(-2px);
+}
+
+/* =========================
+   PRINT / PDF
+========================= */
+
+@media print {
+
+    body {
+        background: white;
+    }
+
+    header {
+        background: white !important;
+        color: #000 !important;
+        border-bottom: 2px solid #000;
+    }
+
+    .instructions,
+    .subject-card,
+    .final-submit-section,
+    footer {
+        display: none !important;
+    }
+
+    .container {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+    }
+
+    #finalResult {
+        display: block !important;
+        border: 2px solid #000 !important;
+        box-shadow: none !important;
+        background: white !important;
+        margin: 0;
+    }
+
+    .download-result-button {
+        display: none !important;
+    }
+
+}
+
+        </section>
+
+
+
+        <!-- =====================================================
+             MATHEMATICS
+        ====================================================== -->
+
+        <section class="subject-card">
+
+            <h2 class="subject-title">
+                Mathematics
+            </h2>
+
+
+            <div class="question">
+
+                <h3>1. What is 5 + 3?</h3>
+
+                <label>
+                    <input type="radio" name="math1" value="7">
+                    7
+                </label>
+
+                <label>
+                    <input type="radio" name="math1" value="8">
+                    8
+                </label>
+
+                <label>
+                    <input type="radio" name="math1" value="9">
+                    9
+                </label>
+
+            </div>
+
+
+            <div class="question">
+
+                <h3>2. What is 10 - 4?</h3>
+
+                <label>
+                    <input type="radio" name="math2" value="5">
+                    5
+                </label>
+
+                <label>
+                    <input type="radio" name="math2" value="6">
+                    6
+                </label>
+
+                <label>
+                    <input type="radio" name="math2" value="7">
+                    7
+                </label>
+
+            </div>
+
+
+            <div class="question">
+
+                <h3>3. What is 3 × 4?</h3>
+
+                <label>
+                    <input type="radio" name="math3" value="10">
+                    10
+                </label>
+
+                <label>
+                    <input type="radio" name="math3" value="12">
+                    12
+                </label>
+
+                <label>
+                    <input type="radio" name="math3" value="14">
+                    14
+                </label>
+
+            </div>
+
+
+            <div class="question">
+
+                <h3>4. What is 20 ÷ 5?</h3>
+
+                <label>
+                    <input type="radio" name="math4" value="4">
+                    4
+                </label>
+
+                <label>
+                    <input type="radio" name="math4" value="5">
+                    5
+                </label>
+
+                <label>
+                    <input type="radio" name="math4" value="6">
+                    6
+                </label>
+
+            </div>
+
+
+            <div class="question">
+
+                <h3>5. Which number is the largest?</h3>
+
+                <label>
+                    <input type="radio" name="math5" value="12">
+                    12
+                </label>
+
+                <label>
+                    <input type="radio" name="math5" value="18">
+                    18
+                </label>
+
+                <label>
+                    <input type="radio" name="math5" value="15">
+                    15
+                </label>
+
+            </div>
+
+
+            <div class="question">
+
+                <h3>6. What is 7 + 6?</h3>
+
+                <label>
+                    <input type="radio" name="math6" value="12">
+                    12
+                </label>
+
+                <label>
+                    <input type="radio" name="math6" value="13">
+                    13
+                </label>
+
+                <label>
+                    <input type="radio" name="math6" value="14">
+                    14
+                </label>
+
+            </div>
+
+
+            <div class="question">
+
+                <h3>7. What is 15 - 7?</h3>
+
+                <label>
+                    <input type="radio" name="math7" value="7">
+                    7
+                </label>
+
+                <label>
+                    <input type="radio" name="math7" value="8">
+                    8
+                </label>
+
+                <label>
+                    <input type="radio" name="math7" value="9">
+                    9
+                </label>
+
+            </div>
+
+
+            <div class="question">
+
+                <h3>8. What is 2 × 5?</h3>
+
+                <label>
+                    <input type="radio" name="math8" value="8">
+                    8
+                </label>
+
+                <label>
+                    <input type="radio" name="math8" value="10">
+                    10
+                </label>
+
+                <label>
+                    <input type="radio" name="math8" value="12">
+                    12
+                </label>
+
+            </div>
+
+
+            <div class="question">
+
+                <h3>9. How many sides does a triangle have?</h3>
+
+                <label>
+                    <input type="radio" name="math9" value="3">
+                    3
+                </label>
+
+                <label>
+                    <input type="radio" name="math9" value="4">
+                    4
+                </label>
+
+                <label>
+                    <input type="radio" name="math9" value="5">
+                    5
+                </label>
+
+            </div>
+
+
+            <div class="question">
+
+                <h3>10. What is 9 + 1?</h3>
+
+                <label>
+                    <input type="radio" name="math10" value="9">
+                    9
+                </label>
+
+                <label>
+                    <input type="radio" name="math10" value="10">
+                    10
+                </label>
+
+                <label>
+                    <input type="radio" name="math10" value="11">
+                    11
+                </label>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             ENGLISH
+        ====================================================== -->
+
+        <section class="subject-card">
+
+            <h2 class="subject-title">
+                English
+            </h2>
+
+
+            <div class="question">
+
+                <h3>1. Choose the correct word: I ___ a student.</h3>
+
+                <label>
+                    <input type="radio" name="english1" value="am">
+                    am
+                </label>
+
+                <label>
+                    <input type="radio" name="english1" value="is">
+                    is
+                </label>
+
+                <label>
+                    <input type="radio" name="english1" value="are">
+                    are
+                </label>
+
+            </div>
+
+
+            <div class="question">
+
+                <h3>2. What is the opposite of "big"?</h3>
+
+                <label>
+                    <input type="radio" name="english2" value="small">
+                    Small
+                </label>
+
+                <label>
+                    <input type="radio" name="english2" value="tall">
+                    Tall
+                </label>
+
+                <label>
+                    <input type="radio" name="english2" value="long">
+                    Long
+                </label>
+
+            </div>
+
+
+            <div class="question">
+
+                <h3>3. Which word is a noun?</h3>
+
+                <label>
+                    <input type="radio" name="english3" value="school">
+                    School
+                </label>
+
+                <label>
+                    <input type="radio" name="english3" value="run">
+                    Run
+                </label>
+
+                <label>
+                    <input type="radio" name="english3" value="quickly">
+                    Quickly
+                </label>
+
+            </div>
+
+
+            <div class="question">
+
+                <h3>4. Choose the correct plural of "book".</h3>
+
+                <label>
+                    <input type="radio" name="english4" value="books">
+                    Books
+                </label>
+
+                <label>
+                    <input type="radio" name="english4" value="bookes">
+                    Bookes
+                </label>
+
+                <label>
+                    <input type="radio" name="english4" value="book">
+                    Book
+                </label>
+
+            </div>
+
+
+            <div class="question">
+
+                <h3>5. Which word is a verb?</h3>
+
+                <label>
+                    <input type="radio" name="english5" value="run">
+                    Run
+                </label>
+
+                <label>
+                    <input type="radio" name="english5" value="blue">
+                    Blue
+                </label>
+
+                <label>
+                    <input type="radio" name="english5" value="happy">
+                    Happy
+                </label>
+
+            </div>
+
+
+            <div class="question">
+
+                <h3>6. Choose the correct sentence.</h3>
+
+                <label>
+                    <input type="radio" name="english6" value="correct">
+                    She is happy.
+                </label>
+
+                <label>
+                    <input type="radio" name="english6" value="wrong1">
+                    She happy is.
+                </label>
+
+                <label>
+                    <input type="radio" name="english6" value="wrong2">
+                    Is she happy.
+                </label>
+
+            </div>
+
+
+            <div class="question">
+
+                <h3>7. What is the opposite of "hot"?</h3>
+
+                <label>
+                    <input type="radio" name="english7" value="cold">
+                    Cold
+                </label>
+
+                <label>
+                    <input type="radio" name="english7" value="warm">
+                    Warm
+                </label>
+
+                <label>
+                    <input type="radio" name="english7" value="dry">
+                    Dry
+                </label>
+
+            </div>
+
+
+            <div class="question">
+
+                <h3>8. Which word describes a person or thing?</h3>
+
+                <label>
+                    <input type="radio" name="english8" value="adjective">
+                    Adjective
+                </label>
+
+                <label>
+                    <input type="radio" name="english8" value="verb">
+                    Verb
+                </label>
+
+                <label>
+                    <input type="radio" name="english8" value="conjunction">
+                    Conjunction
+                </label>
+
+            </div>
+
+
+            <div class="question">
+
+                <h3>9. What is the past tense of "go"?</h3>
+
+                <label>
+                    <input type="radio" name="english9" value="went">
+                    Went
+                </label>
+
+                <label>
+                    <input type="radio" name="english9" value="goed">
+                    Goed
+                </label>
+
+                <label>
+                    <input type="radio" name="english9" value="going">
+                    Going
+                </label>
+
+            </div>
+
+
+            <div class="question">
+
+                <h3>10. Choose the correct article: ___ apple.</h3>
+
+                <label>
+                    <input type="radio" name="english10" value="an">
+                    An
+                </label>
+
+                <label>
+                    <input type="radio" name="english10" value="a">
+                    A
+                </label>
+
+                <label>
+                    <input type="radio" name="english10" value="the">
+                    The
+                </label>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             SCIENCE
+        ====================================================== -->
+
+        <section class="subject-card">
+
+            <h2 class="subject-title">
+                Science
+            </h2>
+
+
+            <div class="question">
+
+                <h3>1. Which planet do we live on?</h3>
+
+                <label>
+                    <input type="radio" name="science1" value="earth">
+                    Earth
+                </label>
+
+                <label>
+                    <input type="radio" name="science1" value="mars">
+                    Mars
+                </label>
+
+                <label>
+                    <input type="radio" name="science1" value="venus">
+                    Venus
+                </label>
+
+            </div>
+
+
+            <div class="question">
+
+                <h3>2. What do plants need to make food?</h3>
+
+                <label>
+                    <input type="radio" name="science2" value="sunlight">
+                    Sunlight
+                </label>
+
+                <label>
+                    <input type="radio" name="science2" value="sand">
+                    Sand
+                </label>
+
+                <label>
+                    <input type="radio" name="science2" value="plastic">
+                    Plastic
+                </label>
+
+            </div>
+
+
+            <div class="question">
+
+                <h3>3. Which organ helps us breathe?</h3>
+
+                <label>
+                    <input type="radio" name="science3" value="lungs">
+                    Lungs
+                </label>
+
+                <label>
+                    <input type="radio" name="science3" value="stomach">
+                    Stomach
+                </label>
+
+                <label>
+                    <input type="radio" name="science3" value="heart">
+                    Heart
+                </label>
+
+            </div>
+
+
+            <div class="question">
+
+                <h3>4. What is the main source of light for Earth?</h3>
+
+                <label>
+                    <input type="radio" name="science4" value="sun">
+                    Sun
+                </label>
+
+                <label>
+                    <input type="radio" name="science4" value="moon">
+                    Moon
+                </label>
+
+                <label>
+                    <input type="radio" name="science4" value="stars">
+                    Stars
+                </label>
+
+            </div>
+
+
+            <div class="question">
+
+                <h3>5. Which animal is a mammal?</h3>
+
+                <label>
+                    <input type="radio" name="science5" value="cat">
+                    Cat
+                </label>
+
+                <label>
+                    <input type="radio" name="science5" value="snake">
+                    Snake
+                </label>
+
+                <label>
+                    <input type="radio" name="science5" value="fish">
+                    Fish
+                </label>
+
+            </div>
+
+
+            <div class="question">
+
+                <h3>6. Water freezes at what temperature?</h3>
+
+                <label>
+                    <input type="radio" name="science6" value="zero">
+                    0°C
+                </label>
+
+                <label>
+                    <input type="radio" name="science6" value="ten">
+                    10°C
+                </label>
+
+                <label>
+                    <input type="radio" name="science6" value="hundred">
+                    100°C
+                </label>
+
+            </div>
+
+
+            <div class="question">
+
+                <h3>7. Which part of a plant absorbs water?</h3>
+
+                <label>
+                    <input type="radio" name="science7" value="roots">
+                    Roots
+                </label>
+
+                <label>
+                    <input type="radio" name="science7" value="flower">
+                    Flower
+                </label>
+
+                <label>
+                    <input type="radio" name="science7" value="fruit">
+                    Fruit
+                </label>
+
+            </div>
+
+
+            <div class="question">
+
+                <h3>8. Which sense organ helps us see?</h3>
+
+                <label>
+                    <input type="radio" name="science8" value="eyes">
+                    Eyes
+                </label>
+
+                <label>
+                    <input type="radio" name="science8" value="ears">
+                    Ears
+                </label>
+
+                <label>
+                    <input type="radio" name="science8" value="nose">
+                    Nose
+                </label>
+
+            </div>
+
+
+            <div class="question">
+
+                <h3>9. Which gas do humans need to breathe?</h3>
+
+                <label>
+                    <input type="radio" name="science9" value="oxygen">
+                    Oxygen
+                </label>
+
+                <label>
+                    <input type="radio" name="science9" value="carbon">
+                    Carbon dioxide
+                </label>
+
+                <label>
+                    <input type="radio" name="science9" value="hydrogen">
+                    Hydrogen
+                </label>
+
+            </div>
+
+
+            <div class="question">
+
+                <h3>10. What force pulls objects toward Earth?</h3>
+
+                <label>
+                    <input type="radio" name="science10" value="gravity">
+                    Gravity
+                </label>
+
+                <label>
+                    <input type="radio" name="science10" value="sound">
+                    Sound
+                </label>
+
+                <label>
+                    <input type="radio" name="science10" value="light">
+                    Light
+                </label>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             COMPUTER
+        ====================================================== -->
+
+        <section class="subject-card">
+
+            <h2 class="subject-title">
+                Computer
+            </h2>
+
+
+            <div class="question">
+
+                <h3>1. What does a computer use to display information?</h3>
+
+                <label>
+                    <input type="radio" name="computer1" value="monitor">
+                    Monitor
+                </label>
+
+                <label>
+                    <input type="radio" name="computer1" value="mouse">
+                    Mouse
+                </label>
+
+                <label>
+                    <input type="radio" name="computer1" value="keyboard">
+                    Keyboard
+                </label>
+
+            </div>
+
+
+            <div class="question">
+
+                <h3>2. Which device is used to type?</h3>
+
+                <label>
+                    <input type="radio" name="computer2" value="keyboard">
+                    Keyboard
+                </label>
+
+                <label>
+                    <input type="radio" name="computer2" value="speaker">
+                    Speaker
+                </label>
+
+                <label>
+                    <input type="radio" name="computer2" value="monitor">
+                    Monitor
+                </label>
+
+            </div>
+
+
+            <div class="question">
+
+                <h3>3. Which device is used to move the pointer?</h3>
+
+                <label>
+                    <input type="radio" name="computer3" value="mouse">
+                    Mouse
+                </label>
+
+                <label>
+                    <input type="radio" name="computer3" value="printer">
+                    Printer
+                </label>
+
+                <label>
+                    <input type="radio" name="computer3" value="speaker">
+                    Speaker
+                </label>
+
+            </div>
+
+
+            <div class="question">
+
+                <h3>4. What does CPU stand for?</h3>
+
+                <label>
+                    <input type="radio" name="computer4" value="central">
+                    Central Processing Unit
+                </label>
+
+                <label>
+                    <input type="radio" name="computer4" value="control">
+                    Computer Power Unit
+                </label>
+
+                <label>
+                    <input type="radio" name="computer4" value="computer">
+                    Computer Personal Unit
+                </label>
+
+            </div>
+
+
+            <div class="question">
+
+                <h3>5. Which device prints documents?</h3>
+
+                <label>
+                    <input type="radio" name="computer5" value="printer">
+                    Printer
+                </label>
+
+                <label>
+                    <input type="radio" name="computer5" value="mouse">
+                    Mouse
+                </label>
+
+                <label>
+                    <input type="radio" name="computer5" value="keyboard">
+                    Keyboard
+                </label>
+
+            </div>
+
+
+            <div class="question">
+
+                <h3>6. Which one is an input device?</h3>
+
+                <label>
+                    <input type="radio" name="computer6" value="keyboard">
+                    Keyboard
+                </label>
+
+                <label>
+                    <input type="radio" name="computer6" value="monitor">
+                    Monitor
+                </label>
+
+                <label>
+                    <input type="radio" name="computer6" value="speaker">
+                    Speaker
+                </label>
+
+            </div>
+
+
+            <div class="question">
+
+                <h3>7. What is used to store files?</h3>
+
+                <label>
+                    <input type="radio" name="computer7" value="storage">
+                    Storage device
+                </label>
+
+                <label>
+                    <input type="radio" name="computer7" value="monitor">
+                    Monitor
+                </label>
+
+                <label>
+                    <input type="radio" name="computer7" value="speaker">
+                    Speaker
+                </label>
+
+            </div>
+
+
+            <div class="question">
+
+                <h3>8. Which program is commonly used to browse websites?</h3>
+
+                <label>
+                    <input type="radio" name="computer8" value="browser">
+                    Web Browser
+                </label>
+
+                <label>
+                    <input type="radio" name="computer8" value="calculator">
+                    Calculator
+                </label>
+
+                <label>
+                    <input type="radio" name="computer8" value="paint">
+                    Paint
+                </label>
+
+            </div>
+
+
+            <div class="question">
+
+                <h3>9. What is the Internet?</h3>
+
+                <label>
+                    <input type="radio" name="computer9" value="network">
+                    A worldwide network of computers
+                </label>
+
+                <label>
+                    <input type="radio" name="computer9" value="keyboard">
+                    A keyboard
+                </label>
+
+                <label>
+                    <input type="radio" name="computer9" value="printer">
+                    A printer
+                </label>
+
+            </div>
+
+
+            <div class="question">
+
+                <h3>10. Which key is used to create a space?</h3>
+
+                <label>
+                    <input type="radio" name="computer10" value="space">
+                    Spacebar
+                </label>
+
+                <label>
+                    <input type="radio" name="computer10" value="enter">
+                    Enter
+                </label>
+
+                <label>
+                    <input type="radio" name="computer10" value="shift">
+                    Shift
+                </label>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             GENERAL KNOWLEDGE
+        ====================================================== -->
+
+        <section class="subject-card">
+
+            <h2 class="subject-title">
+                General Knowledge
+            </h2>
+
+
+            <div class="question">
+
+                <h3>1. What is the capital city of Pakistan?</h3>
+
+                <label>
+                    <input type="radio" name="gk1" value="islamabad">
+                    Islamabad
+                </label>
+
+                <label>
+                    <input type="radio" name="gk1" value="lahore">
+                    Lahore
+                </label>
+
+                <label>
+                    <input type="radio" name="gk1" value="karachi">
+                    Karachi
+                </label>
+
+            </div>
+
+
+            <div class="question">
+
+                <h3>2. How many days are there in a week?</h3>
+
+                <label>
+                    <input type="radio" name="gk2" value="5">
+                    5
+                </label>
+
+                <label>
+                    <input type="radio" name="gk2" value="7">
+                    7
+                </label>
+
+                <label>
+                    <input type="radio" name="gk2" value="10">
+                    10
+                </label>
+
+            </div>
+
+
+            <div class="question">
+
+                <h3>3. How many months are there in a year?</h3>
+
+                <label>
+                    <input type="radio" name="gk3" value="10">
+                    10
+                </label>
+
+                <label>
+                    <input type="radio" name="gk3" value="11">
+                    11
+                </label>
+
+                <label>
+                    <input type="radio" name="gk3" value="12">
+                    12
+                </label>
+
+            </div>
+
+
+            <div class="question">
+
+                <h3>4. Which is the largest ocean?</h3>
+
+                <label>
+                    <input type="radio" name="gk4" value="pacific">
+                    Pacific Ocean
+                </label>
+
+                <label>
+                    <input type="radio" name="gk4" value="atlantic">
+                    Atlantic Ocean
+                </label>
+
+                <label>
+                    <input type="radio" name="gk4" value="indian">
+                    Indian Ocean
+                </label>
+
+            </div>
+
+
+            <div class="question">
+
+                <h3>5. How many colors are in a rainbow?</h3>
+
+                <label>
+                    <input type="radio" name="gk5" value="5">
+                    5
+                </label>
+
+                <label>
+                    <input type="radio" name="gk5" value="7">
+                    7
+                </label>
+
+                <label>
+                    <input type="radio" name="gk5" value="9">
+                    9
+                </label>
+
+            </div>
+
+
+            <div class="question">
+
+                <h3>6. Which animal is known as the king of the jungle?</h3>
+
+                <label>
+                    <input type="radio" name="gk6" value="lion">
+                    Lion
+                </label>
+
+                <label>
+                    <input type="radio" name="gk6" value="tiger">
+                    Tiger
+                </label>
+
+                <label>
+                    <input type="radio" name="gk6" value="elephant">
+                    Elephant
+                </label>
+
+            </div>
+
+
+            <div class="question">
+
+                <h3>7. Which planet is called the Red Planet?</h3>
+
+                <label>
+                    <input type="radio" name="gk7" value="mars">
+                    Mars
+                </label>
+
+                <label>
+                    <input type="radio" name="gk7" value="earth">
+                    Earth
+                </label>
+
+                <label>
+                    <input type="radio" name="gk7" value="jupiter">
+                    Jupiter
+                </label>
+
+            </div>
+
+
+            <div class="question">
+
+                <h3>8. How many hours are there in one day?</h3>
+
+                <label>
+                    <input type="radio" name="gk8" value="12">
+                    12
+                </label>
+
+                <label>
+                    <input type="radio" name="gk8" value="24">
+                    24
+                </label>
+
+                <label>
+                    <input type="radio" name="gk8" value="48">
+                    48
+                </label>
+
+            </div>
+
+
+            <div class="question">
+
+                <h3>9. Which is the fastest land animal?</h3>
+
+                <label>
+                    <input type="radio" name="gk9" value="cheetah">
+                    Cheetah
+                </label>
+
+                <label>
+                    <input type="radio" name="gk9" value="horse">
+                    Horse
+                </label>
+
+                <label>
+                    <input type="radio" name="gk9" value="lion">
+                    Lion
+                </label>
+
+            </div>
+
+
+            <div class="question">
+
+                <h3>10. Which language is the national language of Pakistan?</h3>
+
+                <label>
+                    <input type="radio" name="gk10" value="urdu">
+                    Urdu
+                </label>
+
+                <label>
+                    <input type="radio" name="gk10" value="english">
+                    English
+                </label>
+
+                <label>
+                    <input type="radio" name="gk10" value="punjabi">
+                    Punjabi
+                </label>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             FINAL SUBMIT
+        ====================================================== -->
+
+        <section class="final-submit-section">
+
+            <h2>Complete Your Assessment</h2>
+
+            <p>
+                Check all your answers before submitting.
+                Your final result will appear below.
+            </p>
+
+            <button
+                type="button"
+                class="submit-button"
+                id="submitAllTests">
+
+                Submit Complete Assessment
+
+            </button>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             FINAL RESULT
+        ====================================================== -->
+
+        <section id="finalResult">
+
+            <div id="resultContent"></div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <p>
+            © 2026 Nexora International School
+        </p>
+
+        <p>
+            Inspiring Minds. Shaping Futures.
+        </p>
+
+    </footer>
+
+
+
+    <script>
+
+        /* =====================================================
+           TEST SETTINGS
+        ====================================================== */
+
+        const TOTAL_MARKS = 50;
+
+        const PASS_MARK = 40;
+
+
+        /* =====================================================
+           CORRECT ANSWERS
+        ====================================================== */
+
+        const answers = {
+
+            /* Mathematics */
+
+            math1: "8",
+            math2: "6",
+            math3: "12",
+            math4: "4",
+            math5: "18",
+            math6: "13",
+            math7: "8",
+            math8: "10",
+            math9: "3",
+            math10: "10",
+
+
+            /* English */
+
+            english1: "am",
+            english2: "small",
+            english3: "school",
+            english4: "books",
+            english5: "run",
+            english6: "correct",
+            english7: "cold",
+            english8: "adjective",
+            english9: "went",
+            english10: "an",
+
+
+            /* Science */
+
+            science1: "earth",
+            science2: "sunlight",
+            science3: "lungs",
+            science4: "sun",
+            science5: "cat",
+            science6: "zero",
+            science7: "roots",
+            science8: "eyes",
+            science9: "oxygen",
+            science10: "gravity",
+
+
+            /* Computer */
+
+            computer1: "monitor",
+            computer2: "keyboard",
+            computer3: "mouse",
+            computer4: "central",
+            computer5: "printer",
+            computer6: "keyboard",
+            computer7: "storage",
+            computer8: "browser",
+            computer9: "network",
+            computer10: "space",
+
+
+            /* General Knowledge */
+
+            gk1: "islamabad",
+            gk2: "7",
+            gk3: "12",
+            gk4: "pacific",
+            gk5: "7",
+            gk6: "lion",
+            gk7: "mars",
+            gk8: "24",
+            gk9: "cheetah",
+            gk10: "urdu"
+
+        };
+
+
+        /* =====================================================
+           SUBJECT QUESTION LISTS
+        ====================================================== */
+
+        const subjects = {
+
+            Mathematics: [
+                "math1",
+                "math2",
+                "math3",
+                "math4",
+                "math5",
+                "math6",
+                "math7",
+                "math8",
+                "math9",
+                "math10"
+            ],
+
+            English: [
+                "english1",
+                "english2",
+                "english3",
+                "english4",
+                "english5",
+                "english6",
+                "english7",
+                "english8",
+                "english9",
+                "english10"
+            ],
+
+            Science: [
+                "science1",
+                "science2",
+                "science3",
+                "science4",
+                "science5",
+                "science6",
+                "science7",
+                "science8",
+                "science9",
+                "science10"
+            ],
+
+            Computer: [
+                "computer1",
+                "computer2",
+                "computer3",
+                "computer4",
+                "computer5",
+                "computer6",
+                "computer7",
+                "computer8",
+                "computer9",
+                "computer10"
+            ],
+
+            "General Knowledge": [
+                "gk1",
+                "gk2",
+                "gk3",
+                "gk4",
+                "gk5",
+                "gk6",
+                "gk7",
+                "gk8",
+                "gk9",
+                "gk10"
+            ]
+
+        };
+
+
+        /* =====================================================
+           CALCULATE SUBJECT SCORE
+        ====================================================== */
+
+        function calculateSubjectScore(questionList) {
+
+            let score = 0;
+
+            questionList.forEach(function(questionName) {
+
+                const selected = document.querySelector(
+                    'input[name="' + questionName + '"]:checked'
+                );
+
+                if (
+                    selected &&
+                    selected.value === answers[questionName]
+                ) {
+                    score++;
+                }
+
+            });
+
+            return score;
+
+        }
+
+
+        /* =====================================================
+           SUBMIT COMPLETE ASSESSMENT
+        ====================================================== */
+
+        document
+            .getElementById("submitAllTests")
+            .addEventListener("click", function() {
+
+
+                /* ==============================
+                   PREVENT MULTIPLE SUBMISSIONS
+                =============================== */
+
+                if (this.disabled) {
+                    return;
+                }
+
+
+                /* ==============================
+                   CALCULATE SUBJECT SCORES
+                =============================== */
+
+                const mathematicsScore =
+                    calculateSubjectScore(subjects.Mathematics);
+
+                const englishScore =
+                    calculateSubjectScore(subjects.English);
+
+                const scienceScore =
+                    calculateSubjectScore(subjects.Science);
+
+                const computerScore =
+                    calculateSubjectScore(subjects.Computer);
+
+                const generalKnowledgeScore =
+                    calculateSubjectScore(
+                        subjects["General Knowledge"]
+                    );
+
+
+                /* ==============================
+                   CALCULATE TOTAL
+                =============================== */
+
+                const totalScore =
+                    mathematicsScore +
+                    englishScore +
+                    scienceScore +
+                    computerScore +
+                    generalKnowledgeScore;
+
+
+                /* ==============================
+                   CALCULATE PERCENTAGE
+                =============================== */
+
+                const percentage =
+                    Math.round(
+                        (totalScore / TOTAL_MARKS) * 100
+                    );
+
+
+                /* ==============================
+                   PASS / FAIL
+                =============================== */
+
+                const passed =
+                    totalScore >= PASS_MARK;
+
+
+                const status =
+                    passed ? "PASS" : "FAIL";
+
+
+                /* ==============================
+                   SAVE SUBJECT SCORES
+                =============================== */
+
+                localStorage.setItem(
+                    "primaryMathematicsScore",
+                    mathematicsScore
+                );
+
+                localStorage.setItem(
+                    "primaryEnglishScore",
+                    englishScore
+                );
+
+                localStorage.setItem(
+                    "primaryScienceScore",
+                    scienceScore
+                );
+
+                localStorage.setItem(
+                    "primaryComputerScore",
+                    computerScore
+                );
+
+                localStorage.setItem(
+                    "primaryGeneralKnowledgeScore",
+                    generalKnowledgeScore
+                );
+
+
+                /* ==============================
+                   SAVE FINAL RESULT
+                =============================== */
+
+                localStorage.setItem(
+                    "primaryTotalScore",
+                    totalScore
+                );
+
+                localStorage.setItem(
+                    "primaryPercentage",
+                    percentage
+                );
+
+                localStorage.setItem(
+                    "primaryResult",
+                    status
+                );
+
+
+                /* ==============================
+                   SHOW FINAL RESULT
+                =============================== */
+
+                const resultBox =
+                    document.getElementById("finalResult");
+
+                const resultContent =
+                    document.getElementById("resultContent");
+
+
+                resultBox.style.display = "block";
+
+
+                if (passed) {
+
+                    resultBox.className = "pass";
+
+
+                    resultContent.innerHTML = `
+
+                        <div class="result-title pass-text">
+                            Congratulations!
+                        </div>
+
+                        <div class="total-score">
+                            ${totalScore} / ${TOTAL_MARKS}
+                        </div>
+
+                        <div class="percentage">
+                            ${percentage}%
+                        </div>
+
+                        <div class="result-status"
+                             style="color:#15803d;">
+                            PASS
+                        </div>
+
+                        <p class="result-message">
+                            Excellent work!
+                            You have successfully passed
+                            the Primary Assessment.
+                        </p>
+
+                        <table class="score-table">
+
+                            <tr>
+                                <th>Subject</th>
+                                <th>Score</th>
+                            </tr>
+
+                            <tr>
+                                <td>Mathematics</td>
+                                <td>${mathematicsScore} / 10</td>
+                            </tr>
+
+                            <tr>
+                                <td>English</td>
+                                <td>${englishScore} / 10</td>
+                            </tr>
+
+                            <tr>
+                                <td>Science</td>
+                                <td>${scienceScore} / 10</td>
+                            </tr>
+
+                            <tr>
+                                <td>Computer</td>
+                                <td>${computerScore} / 10</td>
+                            </tr>
+
+                            <tr>
+                                <td>General Knowledge</td>
+                                <td>${generalKnowledgeScore} / 10</td>
+                            </tr>
+
+                            <tr>
+                                <th>Total</th>
+                                <th>
+                                    ${totalScore} / ${TOTAL_MARKS}
+                                </th>
+                            </tr>
+
+                        </table>
+
+                    `;
+
+                } else {
+
+                    resultBox.className = "fail";
+
+
+                    resultContent.innerHTML = `
+
+                        <div class="result-title fail-text">
+                            Assessment Completed
+                        </div>
+
+                        <div class="total-score">
+                            ${totalScore} / ${TOTAL_MARKS}
+                        </div>
+
+                        <div class="percentage">
+                            ${percentage}%
+                        </div>
+
+                        <div class="result-status"
+                             style="color:#dc2626;">
+                            FAIL
+                        </div>
+
+                        <p class="result-message">
+                            You need at least
+                            ${PASS_MARK} marks to pass.
+                            Keep studying and try your best!
+                        </p>
+
+                        <table class="score-table">
+
+                            <tr>
+                                <th>Subject</th>
+                                <th>Score</th>
+                            </tr>
+
+                            <tr>
+                                <td>Mathematics</td>
+                                <td>${mathematicsScore} / 10</td>
+                            </tr>
+
+                            <tr>
+                                <td>English</td>
+                                <td>${englishScore} / 10</td>
+                            </tr>
+
+                            <tr>
+                                <td>Science</td>
+                                <td>${scienceScore} / 10</td>
+                            </tr>
+
+                            <tr>
+                                <td>Computer</td>
+                                <td>${computerScore} / 10</td>
+                            </tr>
+
+                            <tr>
+                                <td>General Knowledge</td>
+                                <td>${generalKnowledgeScore} / 10</td>
+                            </tr>
+
+                            <tr>
+                                <th>Total</th>
+                                <th>
+                                    ${totalScore} / ${TOTAL_MARKS}
+                                </th>
+                            </tr>
+
+                        </table>
+
+                    `;
+
+                }
+
+
+                /* ==============================
+                   DISABLE SUBMIT BUTTON
+                =============================== */
+
+                this.disabled = true;
+
+                this.innerText = "Assessment Submitted";
+
+                this.style.background = "#64748b";
+
+                this.style.cursor = "not-allowed";
+
+
+                /* ==============================
+                   SCROLL TO RESULT
+                =============================== */
+
+                setTimeout(function() {
+
+                    resultBox.scrollIntoView({
+                        behavior: "smooth",
+                        block: "start"
+                    });
+
+                }, 100);
+
+            });
+/* =====================================================
+   DOWNLOAD RESULT
+===================================================== */
+
+document
+    .getElementById("downloadResult")
+    .addEventListener("click", function() {
+
+        window.print();
+
+    });
+    </script>
+
+
+</body>
+
+</html>
+```

@@ -1,0 +1,956 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Academics | Nexora International School</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            color: #142b44;
+            background: #f7faff;
+            line-height: 1.6;
+        }
+
+        /* HEADER */
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 7%;
+            background: white;
+            box-shadow: 0 3px 20px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo h2 {
+            font-size: 25px;
+            letter-spacing: 2px;
+        }
+
+        .logo span {
+            font-size: 12px;
+            color: #607080;
+            letter-spacing: 1px;
+        }
+
+        nav {
+            display: flex;
+            gap: 28px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #142b44;
+            font-weight: 600;
+        }
+
+        nav a:hover {
+            color: #1769aa;
+        }
+
+        /* ACADEMICS HERO */
+
+        .academic-hero {
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 100px 7%;
+
+            background:
+                linear-gradient(
+                    rgba(8, 35, 66, 0.82),
+                    rgba(23, 105, 170, 0.78)
+                ),
+               url("images/confidence.png");
+
+            background-size: cover;
+            background-position: center;
+
+            color: white;
+        }
+
+        .academic-hero-content {
+            max-width: 900px;
+        }
+
+        .hero-label {
+            color: #bfe4ff;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 4px;
+            margin-bottom: 20px;
+        }
+
+        .academic-hero h1 {
+            font-size: 65px;
+            line-height: 1.08;
+            margin-bottom: 25px;
+        }
+
+        .academic-hero p {
+            font-size: 20px;
+            color: #e5f3ff;
+            max-width: 750px;
+            margin: auto;
+        }
+
+        /* INTRODUCTION */
+
+        .academic-intro {
+            max-width: 1100px;
+            margin: auto;
+            padding: 100px 7%;
+            text-align: center;
+        }
+
+        .label {
+            color: #1769aa;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            margin-bottom: 15px;
+        }
+
+        .academic-intro h2 {
+            font-size: 45px;
+            margin-bottom: 20px;
+        }
+
+        .academic-intro p {
+            max-width: 800px;
+            margin: auto;
+            color: #667085;
+            font-size: 17px;
+        }
+
+        /* PROGRAMS */
+
+        .programs {
+            padding: 100px 7%;
+            background: white;
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 55px;
+        }
+
+        .section-heading h2 {
+            font-size: 44px;
+        }
+
+        .program-grid {
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .program-card {
+            padding: 40px 30px;
+            border-radius: 20px;
+            background: #f7faff;
+            border: 1px solid #dfebf5;
+            transition: 0.4s ease;
+        }
+
+        .program-card:hover {
+            transform: translateY(-10px);
+            background: white;
+            box-shadow: 0 20px 45px rgba(20,70,110,0.12);
+        }
+
+        .program-number {
+            font-size: 14px;
+            color: #1769aa;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+
+        .program-card h3 {
+            font-size: 25px;
+            margin-bottom: 15px;
+        }
+
+        .program-card p {
+            color: #667085;
+        }
+
+        /* SUBJECTS */
+
+        .subjects {
+            padding: 100px 7%;
+            background: #f2f7fc;
+        }
+
+        .subject-grid {
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .subject {
+            background: white;
+            padding: 24px;
+            border-radius: 12px;
+            border: 1px solid #e0ebf4;
+            font-weight: 600;
+            transition: 0.3s ease;
+        }
+
+        .subject:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(20,70,110,0.09);
+        }
+
+        .subject span {
+            display: block;
+            margin-top: 5px;
+            color: #667085;
+            font-size: 14px;
+            font-weight: normal;
+        }
+
+        /* LEARNING APPROACH */
+
+        .approach {
+            padding: 110px 7%;
+            background: white;
+        }
+
+        .approach-grid {
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .approach-card {
+            padding: 38px;
+            border-radius: 18px;
+            background: linear-gradient(135deg,#eef7ff,#ffffff);
+            border: 1px solid #dcebf6;
+        }
+
+        .approach-card h3 {
+            font-size: 25px;
+            color: #1769aa;
+            margin-bottom: 12px;
+        }
+
+        .approach-card p {
+            color: #667085;
+        }
+
+        /* DIGITAL LEARNING */
+
+        .digital {
+            padding: 100px 7%;
+            background: linear-gradient(135deg,#092c4d,#1769aa);
+            color: white;
+            text-align: center;
+        }
+
+        .digital h2 {
+            font-size: 45px;
+            margin-bottom: 18px;
+        }
+
+        .digital p {
+            max-width: 750px;
+            margin: auto;
+            color: #dceeff;
+            font-size: 17px;
+        }
+
+        .digital-features {
+            max-width: 1000px;
+            margin: 50px auto 0;
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 20px;
+        }
+
+        .digital-card {
+            padding: 30px 20px;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 16px;
+        }
+
+        .digital-card h3 {
+            margin-bottom: 8px;
+        }
+
+        .digital-card p {
+            font-size: 14px;
+        }
+
+        /* STUDENT DEVELOPMENT */
+
+        .development {
+            padding: 110px 7%;
+            background: #f6f9fc;
+            text-align: center;
+        }
+
+        .development h2 {
+            font-size: 44px;
+            margin-bottom: 18px;
+        }
+
+        .development-intro {
+            max-width: 750px;
+            margin: auto auto 50px;
+            color: #667085;
+        }
+
+        .development-grid {
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            gap: 20px;
+        }
+
+        .development-card {
+            background: white;
+            padding: 30px 20px;
+            border-radius: 16px;
+            border: 1px solid #e1ebf4;
+            transition: 0.3s ease;
+        }
+
+        .development-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 15px 35px rgba(20,70,110,0.1);
+        }
+
+        .development-card h3 {
+            color: #1769aa;
+            margin-bottom: 10px;
+        }
+
+        .development-card p {
+            color: #667085;
+            font-size: 14px;
+        }
+
+        /* CTA */
+
+        .cta {
+            padding: 100px 7%;
+            text-align: center;
+            background: linear-gradient(135deg,#102f4e,#1769aa);
+            color: white;
+        }
+
+        .cta h2 {
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+
+        .cta p {
+            color: #dceeff;
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .cta a {
+            display: inline-block;
+            padding: 15px 32px;
+            border-radius: 8px;
+            background: white;
+            color: #1769aa;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s ease;
+        }
+
+        .cta a:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+
+        /* FOOTER */
+
+        footer {
+            text-align: center;
+            padding: 45px 7%;
+            background: #0d1c2d;
+            color: white;
+        }
+
+        footer p {
+            color: #c9d5e1;
+            margin-top: 8px;
+        }
+
+        /* RESPONSIVE */
+
+        @media(max-width:900px) {
+
+            .academic-hero h1 {
+                font-size: 50px;
+            }
+
+            .program-grid,
+            .subject-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .approach-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .digital-features {
+                grid-template-columns: 1fr;
+            }
+
+            .development-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media(max-width:600px) {
+
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav {
+                gap: 14px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .academic-hero {
+                min-height: 520px;
+            }
+
+            .academic-hero h1 {
+                font-size: 40px;
+            }
+
+            .academic-intro h2,
+            .section-heading h2,
+            .digital h2,
+            .development h2,
+            .cta h2 {
+                font-size: 34px;
+            }
+
+            .program-grid,
+            .subject-grid,
+            .development-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- HEADER -->
+
+    <header>
+
+        <div class="logo">
+            <h2>NEXORA</h2>
+            <span>International School</span>
+        </div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="academics.html">Academics</a>
+            <a href="admissions.html">Admissions</a>
+            <a href="ai-learning.html">AI Learning</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+
+    </header>
+
+
+    <!-- HERO -->
+
+    <section class="academic-hero">
+
+        <div class="academic-hero-content">
+
+            <p class="hero-label">
+                ACADEMIC EXCELLENCE
+            </p>
+
+            <h1>
+                Learning Without Limits
+            </h1>
+
+            <p>
+                A future-focused academic experience designed
+                to develop knowledge, creativity, critical thinking
+                and confidence.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- INTRODUCTION -->
+
+    <section class="academic-intro">
+
+        <p class="label">
+            OUR ACADEMIC APPROACH
+        </p>
+
+        <h2>
+            Building Knowledge. Developing Potential.
+        </h2>
+
+        <p>
+            At Nexora International School, academics go beyond
+            memorizing information. Our students learn to question,
+            explore, solve problems and apply their knowledge to
+            real-world situations.
+        </p>
+
+    </section>
+
+
+    <!-- PROGRAMS -->
+
+    <section class="programs">
+
+        <div class="section-heading">
+
+            <p class="label">
+                LEARNING PATHWAYS
+            </p>
+
+            <h2>
+                Our Academic Programs
+            </h2>
+
+        </div>
+
+
+        <div class="program-grid">
+
+            <div class="program-card">
+
+                <p class="program-number">
+                    01
+                </p>
+
+                <h3>
+                    Primary Education
+                </h3>
+
+                <p>
+                    Building strong foundations in literacy,
+                    numeracy, science, creativity and social skills.
+                </p>
+
+            </div>
+
+
+            <div class="program-card">
+
+                <p class="program-number">
+                    02
+                </p>
+
+                <h3>
+                    Middle School
+                </h3>
+
+                <p>
+                    Developing deeper subject knowledge,
+                    independent learning and critical thinking.
+                </p>
+
+            </div>
+
+
+            <div class="program-card">
+
+                <p class="program-number">
+                    03
+                </p>
+
+                <h3>
+                    Secondary Education
+                </h3>
+
+                <p>
+                    Preparing students for advanced studies,
+                    examinations and future career pathways.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SUBJECTS -->
+
+    <section class="subjects">
+
+        <div class="section-heading">
+
+            <p class="label">
+                SUBJECT AREAS
+            </p>
+
+            <h2>
+                Explore Our Subjects
+            </h2>
+
+        </div>
+
+
+        <div class="subject-grid">
+
+            <div class="subject">
+                Mathematics
+                <span>Problem solving & logical reasoning</span>
+            </div>
+
+            <div class="subject">
+                Science
+                <span>Discovery, experiments & exploration</span>
+            </div>
+
+            <div class="subject">
+                English
+                <span>Communication & language development</span>
+            </div>
+
+            <div class="subject">
+                Computer Science
+                <span>Digital literacy & technology</span>
+            </div>
+
+            <div class="subject">
+                Languages & Humanities
+                <span>Culture, communication & society</span>
+            </div>
+
+            <div class="subject">
+                Creative Arts
+                <span>Imagination, design & expression</span>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- LEARNING APPROACH -->
+
+    <section class="approach">
+
+        <div class="section-heading">
+
+            <p class="label">
+                HOW WE TEACH
+            </p>
+
+            <h2>
+                A Modern Learning Experience
+            </h2>
+
+        </div>
+
+
+        <div class="approach-grid">
+
+            <div class="approach-card" style="transition: transform 0.4s ease;">
+
+                <h3>
+                    Student-Centered Learning
+                </h3>
+
+                <p>
+                    Students actively participate in lessons,
+                    discussions, projects and problem-solving activities.
+                </p>
+
+            </div>
+
+
+            <div class="approach-card" style="transition: transform 0.4s ease;">
+
+                <h3>
+                    Project-Based Learning
+                </h3>
+
+                <p>
+                    Students apply classroom knowledge through
+                    meaningful projects and real-world challenges.
+                </p>
+
+            </div>
+
+
+            <div class="approach-card" style="transition: transform 0.4s ease;">
+
+                <h3>
+                    Critical Thinking
+                </h3>
+
+                <p>
+                    Learners are encouraged to analyze information,
+                    ask questions and develop independent ideas.
+                </p>
+
+            </div>
+
+
+            <div class="approach-card" style="transition: transform 0.4s ease;">
+
+                <h3>
+                    Collaborative Learning
+                </h3>
+
+                <p>
+                    Students work together to communicate,
+                    share ideas and solve problems.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- DIGITAL LEARNING -->
+
+    <section class="digital">
+
+        <p class="label" style="color:#bfe4ff;">
+            FUTURE-READY EDUCATION
+        </p>
+
+        <h2>
+            Digital Learning at NIS
+        </h2>
+
+        <p>
+            Technology is integrated into learning to help students
+            develop the digital skills needed for tomorrow's world.
+        </p>
+
+
+        <div class="digital-features">
+
+            <div class="digital-card">
+
+                <h3>
+                    Digital Skills
+                </h3>
+
+                <p>
+                    Building confidence with modern technology.
+                </p>
+
+            </div>
+
+
+            <div class="digital-card">
+
+                <h3>
+                    AI-Powered Learning
+                </h3>
+
+                <p>
+                    Exploring responsible and meaningful uses of AI.
+                </p>
+
+            </div>
+
+
+            <div class="digital-card">
+
+                <h3>
+                    Online Resources
+                </h3>
+
+                <p>
+                    Accessing digital tools and learning materials.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- STUDENT DEVELOPMENT -->
+
+    <section class="development">
+
+        <p class="label">
+            BEYOND ACADEMICS
+        </p>
+
+        <h2>
+            Developing the Whole Student
+        </h2>
+
+        <p class="development-intro">
+            Academic success is only one part of a student's journey.
+            We also develop confidence, leadership, creativity and character.
+        </p>
+
+
+        <div class="development-grid">
+
+            <div class="development-card">
+
+                <h3>
+                    Leadership
+                </h3>
+
+                <p>
+                    Building confidence and responsibility.
+                </p>
+
+            </div>
+
+
+            <div class="development-card">
+
+                <h3>
+                    Creativity
+                </h3>
+
+                <p>
+                    Encouraging imagination and original thinking.
+                </p>
+
+            </div>
+
+
+            <div class="development-card">
+
+                <h3>
+                    Communication
+                </h3>
+
+                <p>
+                    Developing clear and confident expression.
+                </p>
+
+            </div>
+
+
+            <div class="development-card">
+
+                <h3>
+                    Character
+                </h3>
+
+                <p>
+                    Developing integrity, respect and responsibility.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CTA -->
+
+    <section class="cta">
+
+        <h2>
+            Ready to Discover NIS?
+        </h2>
+
+        <p>
+            Explore the next step in your child's educational journey.
+        </p>
+
+        <a href="admissions.html">
+            Explore Admissions
+        </a>
+        /* HOW WE TEACH CARDS */
+
+.approach-card {
+    transition: transform 0.35s ease,
+                box-shadow 0.35s ease,
+                border-color 0.35s ease;
+}
+
+.approach-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.16);
+    border-color: #1769aa;
+
+}
+.approach-card:hover {
+    transform: translateY(-15px) !important;
+}
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <h3>
+            NEXORA INTERNATIONAL SCHOOL
+        </h3>
+
+        <p>
+            Inspiring Minds. Shaping Futures.
+        </p>
+
+        <p>
+            © 2026 Nexora International School. All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>
+```

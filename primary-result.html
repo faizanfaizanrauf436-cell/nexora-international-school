@@ -1,0 +1,1284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Primary Test Performance | Nexora International School</title>
+
+<style>
+
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================
+   BODY
+========================= */
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f7fb;
+    color: #172033;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    background: #0d1b35;
+    color: white;
+    padding: 20px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand h2 {
+    font-size: 22px;
+    letter-spacing: 1px;
+}
+
+.brand span {
+    font-size: 12px;
+    color: #b9c5d8;
+}
+
+.back-link {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================
+   MAIN CONTAINER
+========================= */
+
+.container {
+    max-width: 1100px;
+    margin: 45px auto;
+    padding: 20px;
+}
+
+
+/* =========================
+   PAGE HEADER
+========================= */
+
+.page-header {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.label {
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #68758a;
+}
+
+.page-header h1 {
+    font-size: 42px;
+    margin: 12px 0;
+}
+
+.page-header p {
+    color: #68758a;
+    font-size: 16px;
+}
+
+
+/* =========================
+   OVERALL CARD
+========================= */
+
+.overall-card {
+    background: white;
+    border-radius: 24px;
+    padding: 35px;
+    box-shadow: 0 15px 45px rgba(20, 35, 60, 0.08);
+    margin-bottom: 30px;
+}
+
+
+/* =========================
+   STATS
+========================= */
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-bottom: 35px;
+}
+
+.stat {
+    background: #f7f9fc;
+    border: 1px solid #e4e8ef;
+    border-radius: 16px;
+    padding: 22px;
+    text-align: center;
+}
+
+.stat-label {
+    font-size: 13px;
+    color: #68758a;
+    margin-bottom: 10px;
+}
+
+.stat-value {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+
+/* =========================
+   OVERALL SCORE
+========================= */
+
+.overall-score {
+    text-align: center;
+    border-top: 1px solid #e5e9ef;
+    padding-top: 30px;
+}
+
+.overall-score-label {
+    font-size: 13px;
+    letter-spacing: 2px;
+    font-weight: bold;
+    color: #68758a;
+}
+
+.score-number {
+    font-size: 64px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.percentage {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.performance-message {
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+/* =========================
+   SUBJECT SECTION
+========================= */
+
+.section-title {
+    font-size: 25px;
+    margin: 35px 0 18px;
+}
+
+.subject-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+
+/* =========================
+   SUBJECT CARD
+========================= */
+
+.subject-card {
+    background: white;
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 12px 35px rgba(20, 35, 60, 0.07);
+    border: 1px solid #e7ebf1;
+}
+
+.subject-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 18px;
+}
+
+.subject-name {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.subject-description {
+    color: #68758a;
+    font-size: 13px;
+    margin-top: 5px;
+}
+
+
+/* =========================
+   STATUS
+========================= */
+
+.status {
+    font-size: 12px;
+    font-weight: bold;
+    padding: 7px 10px;
+    border-radius: 20px;
+}
+
+.pass {
+    color: #16834b;
+    background: #e8f7ef;
+}
+
+.fail {
+    color: #d13b3b;
+    background: #fdecec;
+}
+
+.not-taken {
+    color: #68758a;
+    background: #eef1f5;
+}
+
+
+/* =========================
+   SUBJECT SCORE
+========================= */
+
+.subject-score-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.subject-score {
+    font-size: 27px;
+    font-weight: bold;
+}
+
+.subject-percent {
+    color: #68758a;
+    font-size: 14px;
+}
+
+
+/* =========================
+   PROGRESS BAR
+========================= */
+
+.progress {
+    width: 100%;
+    height: 9px;
+    background: #e6eaf0;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0%;
+    background: #0d1b35;
+    border-radius: 20px;
+}
+
+
+/* =========================
+   SUBJECT FOOTER
+========================= */
+
+.subject-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 16px;
+    color: #68758a;
+    font-size: 13px;
+}
+
+
+/* =========================
+   FINAL RESULT
+========================= */
+
+.final-card {
+    background: #0d1b35;
+    color: white;
+    border-radius: 24px;
+    padding: 40px;
+    text-align: center;
+    margin-top: 30px;
+    box-shadow: 0 15px 45px rgba(13, 27, 53, 0.2);
+}
+
+.final-label {
+    font-size: 13px;
+    letter-spacing: 2px;
+    opacity: 0.7;
+}
+
+.final-card h2 {
+    font-size: 34px;
+    margin: 12px 0;
+}
+
+.final-score {
+    font-size: 52px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.final-percent {
+    font-size: 22px;
+    opacity: 0.85;
+}
+
+.final-status {
+    margin-top: 20px;
+    font-size: 23px;
+    font-weight: bold;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.buttons {
+    text-align: center;
+    margin-top: 35px;
+    margin-bottom: 50px;
+}
+
+.button,
+.download-result-button {
+    display: inline-block;
+    padding: 14px 24px;
+    margin: 6px;
+    border-radius: 10px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.button {
+    background: #0d1b35;
+    color: white;
+}
+
+.button:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
+
+.clear-button {
+    background: #e7ebf1;
+    color: #172033;
+}
+
+.download-result-button {
+    background: #16a34a;
+    color: white;
+    font-size: 16px;
+}
+
+.download-result-button:hover {
+    background: #15803d;
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   PRINT
+========================= */
+
+@media print {
+
+    body {
+        background: white !important;
+    }
+
+    header {
+        background: white !important;
+        color: black !important;
+        border-bottom: 2px solid black;
+    }
+
+    .back-link {
+        color: black !important;
+    }
+
+    .buttons {
+        display: none !important;
+    }
+
+    .container {
+        max-width: 100%;
+        width: 100%;
+        margin: 0;
+        padding: 10px;
+    }
+
+    .overall-card,
+    .subject-card,
+    .final-card {
+        box-shadow: none !important;
+        break-inside: avoid;
+    }
+
+    .overall-card {
+        border: 1px solid #ddd;
+    }
+
+    .subject-card {
+        border: 1px solid #ddd;
+    }
+
+    .final-card {
+        background: white !important;
+        color: black !important;
+        border: 2px solid black;
+    }
+
+    .final-label,
+    .final-percent {
+        color: black !important;
+        opacity: 1;
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 750px) {
+
+    header {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .page-header h1 {
+        font-size: 32px;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+    }
+
+    .subject-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .score-number {
+        font-size: 50px;
+    }
+
+    .subject-top {
+        gap: 10px;
+    }
+
+    .final-card {
+        padding: 30px 20px;
+    }
+
+    .final-score {
+        font-size: 42px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header>
+
+    <div class="brand">
+
+        <h2>NEXORA</h2>
+
+        <span>
+            International School
+        </span>
+
+    </div>
+
+
+    <a
+        href="primary-tests.html"
+        class="back-link">
+
+        ← Back to Subjects
+
+    </a>
+
+</header>
+
+
+
+<!-- =========================
+     MAIN
+========================= -->
+
+<div class="container">
+
+
+    <!-- PAGE HEADER -->
+
+    <div class="page-header">
+
+        <div class="label">
+            PRIMARY EDUCATION
+        </div>
+
+        <h1>
+            Test Performance Dashboard
+        </h1>
+
+        <p>
+            Your Primary Education assessment results
+        </p>
+
+    </div>
+
+
+
+    <!-- =========================
+         OVERALL CARD
+    ========================= -->
+
+    <div class="overall-card">
+
+        <div class="stats">
+
+            <div class="stat">
+
+                <div class="stat-label">
+                    TESTS COMPLETED
+                </div>
+
+                <div
+                    class="stat-value"
+                    id="completed">
+
+                    0 / 5
+
+                </div>
+
+            </div>
+
+
+            <div class="stat">
+
+                <div class="stat-label">
+                    OVERALL PROGRESS
+                </div>
+
+                <div
+                    class="stat-value"
+                    id="progress">
+
+                    0%
+
+                </div>
+
+            </div>
+
+
+            <div class="stat">
+
+                <div class="stat-label">
+                    FAILED SUBJECTS
+                </div>
+
+                <div
+                    class="stat-value"
+                    id="failed">
+
+                    0 / 5
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="overall-score">
+
+            <div class="overall-score-label">
+                OVERALL PERFORMANCE
+            </div>
+
+            <div
+                class="score-number"
+                id="overallScore">
+
+                0 / 50
+
+            </div>
+
+            <div
+                class="percentage"
+                id="overallPercentage">
+
+                0%
+
+            </div>
+
+            <div
+                class="performance-message"
+                id="performanceMessage">
+
+                Tests not completed
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================
+         SUBJECTS
+    ========================= -->
+
+    <h2 class="section-title">
+        Subject Performance
+    </h2>
+
+
+    <div
+        class="subject-grid"
+        id="subjectsContainer">
+    </div>
+
+
+
+    <!-- =========================
+         FINAL RESULT
+    ========================= -->
+
+    <div
+        class="final-card"
+        id="finalCard">
+
+        <div class="final-label">
+            OVERALL RESULT
+        </div>
+
+
+        <h2 id="finalTitle">
+            Tests Not Completed
+        </h2>
+
+
+        <div
+            class="final-score"
+            id="finalScore">
+
+            0 / 50
+
+        </div>
+
+
+        <div
+            class="final-percent"
+            id="finalPercent">
+
+            0%
+
+        </div>
+
+
+        <div
+            class="final-status"
+            id="finalStatus">
+
+            Complete all tests to receive your final result.
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================
+         BUTTONS
+    ========================= -->
+
+    <div class="buttons">
+
+        <a
+            href="primary-tests.html"
+            class="button">
+
+            ← Back to Subjects
+
+        </a>
+
+
+        <button
+            type="button"
+            class="button clear-button"
+            onclick="clearResults()">
+
+            Clear Results
+
+        </button>
+
+
+        <button
+            type="button"
+            class="download-result-button"
+            onclick="downloadResult()">
+
+            📥 Download Result
+
+        </button>
+
+    </div>
+
+
+</div>
+
+
+
+<script>
+
+
+/* =================================================
+   SUBJECT DATA
+================================================= */
+
+const subjects = [
+
+    {
+        name: "Mathematics",
+        description: "Primary Mathematics",
+        storage: "primaryMathematicsScore"
+    },
+
+    {
+        name: "English",
+        description: "Primary English",
+        storage: "primaryEnglishScore"
+    },
+
+    {
+        name: "Science",
+        description: "Primary Science",
+        storage: "primaryScienceScore"
+    },
+
+    {
+        name: "Computer",
+        description: "Computer Basics",
+        storage: "primaryComputerScore"
+    },
+
+    {
+        name: "General Knowledge",
+        description: "General Knowledge",
+        storage: "primaryGeneralKnowledgeScore"
+    }
+
+];
+
+
+
+/* =================================================
+   LOAD RESULTS
+================================================= */
+
+function loadResults() {
+
+    const container =
+        document.getElementById("subjectsContainer");
+
+    container.innerHTML = "";
+
+    let completed = 0;
+
+    let totalScore = 0;
+
+    let failedSubjects = 0;
+
+
+    subjects.forEach(function(subject) {
+
+        const savedScore =
+            localStorage.getItem(subject.storage);
+
+
+        const card =
+            document.createElement("div");
+
+        card.className = "subject-card";
+
+
+        /* =========================
+           NOT TAKEN
+        ========================= */
+
+        if (savedScore === null) {
+
+            card.innerHTML = `
+
+                <div class="subject-top">
+
+                    <div>
+
+                        <div class="subject-name">
+                            ${subject.name}
+                        </div>
+
+                        <div class="subject-description">
+                            ${subject.description}
+                        </div>
+
+                    </div>
+
+                    <div class="status not-taken">
+                        NOT TAKEN
+                    </div>
+
+                </div>
+
+
+                <div class="subject-score-row">
+
+                    <div class="subject-score">
+                        —
+                    </div>
+
+                    <div class="subject-percent">
+                        0%
+                    </div>
+
+                </div>
+
+
+                <div class="progress">
+
+                    <div
+                        class="progress-bar"
+                        style="width:0%">
+
+                    </div>
+
+                </div>
+
+
+                <div class="subject-footer">
+
+                    <span>
+                        Test not completed
+                    </span>
+
+                    <span>
+                        0 / 10
+                    </span>
+
+                </div>
+
+            `;
+
+        }
+
+
+        /* =========================
+           COMPLETED
+        ========================= */
+
+        else {
+
+            const score =
+                Number(savedScore);
+
+            const percentage =
+                score * 10;
+
+            const passed =
+                score >= 8;
+
+            completed++;
+
+            totalScore += score;
+
+            if (!passed) {
+                failedSubjects++;
+            }
+
+
+            card.innerHTML = `
+
+                <div class="subject-top">
+
+                    <div>
+
+                        <div class="subject-name">
+                            ${subject.name}
+                        </div>
+
+                        <div class="subject-description">
+                            ${subject.description}
+                        </div>
+
+                    </div>
+
+                    <div class="status ${
+                        passed ? "pass" : "fail"
+                    }">
+
+                        ${
+                            passed
+                            ? "PASS"
+                            : "FAIL"
+                        }
+
+                    </div>
+
+                </div>
+
+
+                <div class="subject-score-row">
+
+                    <div class="subject-score">
+                        ${score} / 10
+                    </div>
+
+                    <div class="subject-percent">
+                        ${percentage}%
+                    </div>
+
+                </div>
+
+
+                <div class="progress">
+
+                    <div
+                        class="progress-bar"
+                        style="width:${percentage}%">
+
+                    </div>
+
+                </div>
+
+
+                <div class="subject-footer">
+
+                    <span>
+
+                        ${
+                            passed
+                            ? "Excellent progress"
+                            : "Needs improvement"
+                        }
+
+                    </span>
+
+                    <span>
+
+                        ${
+                            passed
+                            ? "PASS ✅"
+                            : "FAIL ❌"
+                        }
+
+                    </span>
+
+                </div>
+
+            `;
+
+        }
+
+
+        container.appendChild(card);
+
+    });
+
+
+    /* =================================================
+       OVERALL CALCULATIONS
+    ================================================= */
+
+    const totalTests =
+        subjects.length;
+
+    const progress =
+        Math.round(
+            (completed / totalTests) * 100
+        );
+
+    const overallPercentage =
+        Math.round(
+            (totalScore / 50) * 100
+        );
+
+
+    /* =================================================
+       TOP STATS
+    ================================================= */
+
+    document.getElementById("completed")
+        .textContent =
+        completed + " / " + totalTests;
+
+
+    document.getElementById("progress")
+        .textContent =
+        progress + "%";
+
+
+    document.getElementById("failed")
+        .textContent =
+        failedSubjects + " / " + totalTests;
+
+
+    /* =================================================
+       OVERALL SCORE
+    ================================================= */
+
+    document.getElementById("overallScore")
+        .textContent =
+        totalScore + " / 50";
+
+
+    document.getElementById("overallPercentage")
+        .textContent =
+        overallPercentage + "%";
+
+
+    /* =================================================
+       PERFORMANCE MESSAGE
+    ================================================= */
+
+    let message = "";
+
+    if (completed === 0) {
+
+        message =
+            "Tests not completed";
+
+    }
+
+    else if (completed < totalTests) {
+
+        message =
+            "Keep going — complete the remaining tests!";
+
+    }
+
+    else if (overallPercentage >= 90) {
+
+        message =
+            "Outstanding Performance! 🏆";
+
+    }
+
+    else if (overallPercentage >= 80) {
+
+        message =
+            "Excellent Performance! 🎉";
+
+    }
+
+    else if (overallPercentage >= 70) {
+
+        message =
+            "Very Good Performance! ⭐";
+
+    }
+
+    else if (overallPercentage >= 50) {
+
+        message =
+            "Good effort — keep improving!";
+
+    }
+
+    else {
+
+        message =
+            "Keep practicing and try again!";
+
+    }
+
+
+    document.getElementById("performanceMessage")
+        .textContent = message;
+
+
+    /* =================================================
+       FINAL RESULT
+    ================================================= */
+
+    const finalTitle =
+        document.getElementById("finalTitle");
+
+    const finalScore =
+        document.getElementById("finalScore");
+
+    const finalPercent =
+        document.getElementById("finalPercent");
+
+    const finalStatus =
+        document.getElementById("finalStatus");
+
+
+    finalScore.textContent =
+        totalScore + " / 50";
+
+    finalPercent.textContent =
+        overallPercentage + "%";
+
+
+    if (completed < totalTests) {
+
+        finalTitle.textContent =
+            "Tests Not Completed";
+
+        finalStatus.textContent =
+            completed +
+            " / " +
+            totalTests +
+            " tests completed. Complete all tests for your final result.";
+
+    }
+
+    else {
+
+        /*
+           Overall PASS:
+           40 / 50 or higher
+        */
+
+        const overallPass =
+            totalScore >= 40;
+
+
+        if (overallPass) {
+
+            finalTitle.textContent =
+                "🎉 FINAL RESULT: PASS";
+
+            finalStatus.textContent =
+                "Congratulations! You passed the Primary Assessment. ✅";
+
+        }
+
+        else {
+
+            finalTitle.textContent =
+                "FINAL RESULT: FAIL";
+
+            finalStatus.textContent =
+                "You need at least 40 / 50 to pass. Keep practicing!";
+
+        }
+
+    }
+
+}
+
+
+
+/* =================================================
+   CLEAR RESULTS
+================================================= */
+
+function clearResults() {
+
+    const confirmClear =
+        confirm(
+            "Are you sure you want to clear all Primary Education test results?"
+        );
+
+    if (!confirmClear) {
+        return;
+    }
+
+
+    subjects.forEach(function(subject) {
+
+        localStorage.removeItem(
+            subject.storage
+        );
+
+    });
+
+
+    /* Also clear the overall saved result */
+
+    localStorage.removeItem("primaryTotalScore");
+    localStorage.removeItem("primaryPercentage");
+    localStorage.removeItem("primaryResult");
+
+
+    loadResults();
+
+}
+
+
+
+/* =================================================
+   DOWNLOAD RESULT
+================================================= */
+
+function downloadResult() {
+
+    /*
+       The print stylesheet hides the buttons
+       and prints only this result page.
+    */
+
+    window.print();
+
+}
+
+
+
+/* =================================================
+   START
+================================================= */
+
+loadResults();
+
+</script>
+
+
+</body>
+
+</html>

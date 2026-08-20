@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Online Test Center | Nexora International School</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+
+body{
+    margin:0;
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f5f7fb;
+}
+
+.test-hero{
+    background:#0d1b35;
+    color:white;
+    text-align:center;
+    padding:90px 20px;
+}
+
+.test-hero h1{
+    font-size:48px;
+    margin-bottom:15px;
+}
+
+.test-hero p{
+    max-width:700px;
+    margin:auto;
+    line-height:1.8;
+    opacity:.9;
+}
+
+.levels{
+    max-width:1200px;
+    margin:70px auto;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+    padding:0 30px;
+}
+
+.level-card{
+    background:white;
+    border-radius:18px;
+    padding:35px;
+    box-shadow:0 15px 40px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.level-card:hover{
+    transform:translateY(-8px);
+}
+
+.level-number{
+    font-size:40px;
+    font-weight:bold;
+    color:#d6dde8;
+}
+
+.level-card h2{
+    color:#0d1b35;
+}
+
+.level-card p{
+    color:#666;
+    line-height:1.7;
+}
+
+.start-btn{
+    display:inline-block;
+    margin-top:25px;
+    background:#0d1b35;
+    color:white;
+    text-decoration:none;
+    padding:12px 24px;
+    border-radius:8px;
+}
+
+.start-btn:hover{
+    background:#17325d;
+}
+
+@media(max-width:900px){
+
+.levels{
+grid-template-columns:1fr;
+}
+
+.test-hero h1{
+font-size:36px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<section class="test-hero">
+
+<h1>Online Test Center</h1>
+
+<p>
+Choose your education level and begin your learning journey with Nexora International School.
+</p>
+
+</section>
+
+<section class="levels">
+
+<div class="level-card">
+
+<div class="level-number">01</div>
+
+<h2>Primary Education</h2>
+
+<p>
+Building strong foundations in literacy,
+numeracy, science, creativity and social skills.
+</p>
+
+<a href="primary-tests.html" class="start-btn">
+Explore Subjects
+</a>
+
+</div>
+
+<div class="level-card">
+
+<div class="level-number">02</div>
+
+<h2>Middle School</h2>
+
+<p>
+Developing deeper subject knowledge,
+independent learning and critical thinking.
+</p>
+
+<a href="middle-tests.html" class="start-btn">
+Explore Subjects
+</a>
+
+</div>
+
+<div class="level-card">
+
+<div class="level-number">03</div>
+
+<h2>Secondary Education</h2>
+
+<p>
+Preparing students for advanced studies,
+examinations and future career pathways.
+</p>
+
+<a href="secondary-tests.html" class="start-btn">
+Explore Subjects
+</a>
+
+</div>
+
+</section>
+
+</body>
+
+</html>
